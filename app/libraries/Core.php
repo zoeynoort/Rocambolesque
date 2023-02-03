@@ -42,7 +42,7 @@ class Core
 			$url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
 			return $url;
 		} else {
-			return array('Landingpages', 'index');
+			return array('Main', 'index');
 		}
 	}
 }
