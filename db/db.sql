@@ -7,10 +7,10 @@ USE rocambolesque;
 -- Tables
 CREATE TABLE `Person` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `firstname` varchar(255) NOT NULL,
-  `infix` varchar(255),
-  `lastname` varchar(255) NOT NULL,
-  `dateofbirth` date NOT NULL
+  `firstname` varchar(60) NOT NULL,
+  `infix` varchar(30),
+  `lastname` varchar(50) NOT NULL,
+  `dateOfBirth` date NOT NULL
 );
 
 CREATE TABLE `Contact` (
