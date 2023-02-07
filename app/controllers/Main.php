@@ -1,6 +1,6 @@
 <?php
 
-class Main
+class Main extends Controller
 {
 	public function __construct()
 	{
@@ -9,6 +9,6 @@ class Main
 
 	public function index()
 	{
-		echo '<p3>Test</p3>';
+		$this->view("index");
 	}
 }
