@@ -1,57 +1,111 @@
--- Name: CreatePerson
--- Input: firstname, infix, lastname, dateOfBirth
--- Output: id
-DELEMETER / / CREATE PROCEDURE CreatePerson(
-    IN firstname varchar(60),
-    IN infix varchar(30),
-    IN lastname varchar(50),
-    IN dateOfBirth date
-) BEGIN -- Rollback if person already exists
-DECLARE EXIT HANDLER FOR 1062 BEGIN ROLLBACK;
-SELECT 0 AS id;
-END;
-START TRANSACTION;
-INSERT INTO Person (firstname, infix, lastname, dateOfBirth)
-VALUES (firstname, infix, lastname, dateOfBirth);
-SELECT LAST_INSERT_ID() AS id;
-COMMIT;
-END;
-DELEMETER;
--- Name: UpdatePerson
--- Input: id or firstname or infix or lastname or dateOfBirth
--- Output: id
-DELEMETER / / CREATE PROCEDURE UpdatePerson(
-    IN id int,
-    IN firstname varchar(60),
-    IN infix varchar(30),
-    IN lastname varchar(50),
-    IN dateOfBirth date
-) BEGIN -- Rollback if person not exists
-DECLARE EXIT HANDLER FOR 1062 BEGIN ROLLBACK;
-SELECT 0 AS id;
-END;
-DELEMETER;
-START TRANSACTION;
-UPDATE Person
-SET firstname = firstname,
-    infix = infix,
-    lastname = lastname,
-    dateOfBirth = dateOfBirth
-WHERE id = id;
-SELECT id;
-COMMIT;
-END;
--- Name: DeletePerson
--- Input: id
--- Output: id
-DELEMETER / / CREATE PROCEDURE DeletePerson(IN id int) BEGIN -- Rollback if person not exists
-DECLARE EXIT HANDLER FOR 1062 BEGIN ROLLBACK;
-SELECT 0 AS id;
-END;
-DELEMETER;
-START TRANSACTION;
-DELETE FROM Person
-WHERE id = id;
-SELECT id;
-COMMIT;
-END;
+-- spAddPerson START
+
+DROP PROCEDURE IF EXISTS spAddPerson;
+
+DELIMITER //
+
+-- firstname varchar(60)
+-- infix varchar(30)
+-- lastname varchar(50)
+-- dateOfBirth date
+
+CREATE PROCEDURE spAddPerson
+( -- Dit zijn alle argumenten die je meegeeft met het aanroepen van de procedure
+  p_firstname varchar(60), 
+  p_infix varchar(30),
+  p_lastname varchar(50),
+  p_dateOfBirth date
+) 
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN 
+        ROLLBACK;
+        SELECT 'An error has occurred, operation rollbacked and the stored procedure was terminated';
+    END;
+    
+    START TRANSACTION;
+        INSERT INTO Person (firstname, infix, lastname, dateOfBirth, createdAt, updatedAt) VALUES (p_firstname, p_infix, p_lastname, p_dateOfBirth, SYSDATE(6), SYSDATE(6));
+    COMMIT;
+END //
+DELIMITER ;
+
+-- spAddPerson END
+
+-- spDeletePerson START
+
+DROP PROCEDURE IF EXISTS spDeletePerson;
+
+DELIMITER //
+
+-- id int(6)
+-- (id van het persoon dat je wilt verwijderen) 
+
+CREATE PROCEDURE spDeletePerson
+(
+  p_id int(6) 
+) 
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN 
+        ROLLBACK;
+        SELECT 'An error has occurred, operation rollbacked and the stored procedure was terminated';
+    END;
+    
+    START TRANSACTION;
+        DELETE FROM person WHERE id = p_id;
+    COMMIT;
+END //
+DELIMITER ;
+
+-- spDeletePerson END
+
+-- spEditPerson START
+
+-- id int(6) 
+-- (id van persoon dat je wilt bewerken)
+
+-- firstname varchar(60)
+-- infix varchar(30)
+-- lastname varchar(50)
+-- dateOfBirth date
+-- isActive boolean
+-- comment varchar(250)
+-- (waarden van persoon dat je bewerkt)
+
+DROP PROCEDURE IF EXISTS spEditPerson;
+
+DELIMITER //
+
+CREATE PROCEDURE spEditPerson
+(
+  p_id int(6),
+  p_firstname varchar(60),
+  p_infix varchar(30),
+  p_lastname varchar(50),
+  p_dateOfBirth date,
+  p_isActive boolean,
+  p_comment varchar(250)
+)
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN 
+        ROLLBACK;
+        SELECT 'An error has occurred, operation rollbacked and the stored procedure was terminated';
+    END;
+    
+    START TRANSACTION;
+        UPDATE Person SET
+            firstname = p_firstname,
+            infix = p_infix,
+            lastname = p_lastname,
+            dateOfBirth = p_dateOfBirth,
+            isActive = p_isActive,
+            comment = p_comment,
+            updatedAt = SYSDATE(6)
+        WHERE id = p_id;
+    COMMIT;
+END //
+
+DELIMITER ;
+
+-- spEditPerson END
