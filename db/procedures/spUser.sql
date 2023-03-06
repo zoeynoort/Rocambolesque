@@ -1,7 +1,7 @@
 -- Name: CreateUser
 -- Input: id, personId, username, password
 -- Output: id
-DELEMETER / / CREATE PROCEDURE CreateUser(
+DELIMETER / / CREATE PROCEDURE CreateUser(
     IN id INT,
     IN personId INT,
     IN username VARCHAR(60),
@@ -20,7 +20,7 @@ DELIMITER;
 -- Name: UpdateUser
 -- Input: id or personId or username or password
 -- Output: id
-DELEMETER / / CREATE PROCEDURE UpdateUser(
+DELIMETER / / CREATE PROCEDURE UpdateUser(
     IN id INT,
     IN personId INT,
     IN username VARCHAR(60),
@@ -29,7 +29,7 @@ DELEMETER / / CREATE PROCEDURE UpdateUser(
 DECLARE EXIT HANDLER FOR 1062 BEGIN ROLLBACK;
 SELECT 0 AS id;
 END;
-DELEMETER;
+DELIMETER;
 START TRANSACTION;
 UPDATE User
 SET personId = personId,
@@ -42,11 +42,11 @@ END;
 -- Name: DeleteUser
 -- Input: id
 -- Output: id
-DELEMETER / / CREATE PROCEDURE DeleteUser(IN id int) BEGIN -- Rollback if person not exists
+DELIMETER / / CREATE PROCEDURE DeleteUser(IN id int) BEGIN -- Rollback if person not exists
 DECLARE EXIT HANDLER FOR 1062 BEGIN ROLLBACK;
 SELECT 0 AS id;
 END;
-DELEMETER;
+DELIMETER;
 START TRANSACTION;
 DELETE FROM User
 WHERE id = id;

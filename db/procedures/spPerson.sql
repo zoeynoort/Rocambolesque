@@ -1,7 +1,7 @@
 -- Name: CreatePerson
 -- Input: firstname, infix, lastname, dateOfBirth
 -- Output: id
-DELEMETER / / CREATE PROCEDURE CreatePerson(
+DELIMETER / / CREATE PROCEDURE CreatePerson(
     IN firstname varchar(60),
     IN infix varchar(30),
     IN lastname varchar(50),
@@ -16,11 +16,11 @@ VALUES (firstname, infix, lastname, dateOfBirth);
 SELECT LAST_INSERT_ID() AS id;
 COMMIT;
 END;
-DELEMETER;
+DELIMETER;
 -- Name: UpdatePerson
 -- Input: id or firstname or infix or lastname or dateOfBirth
 -- Output: id
-DELEMETER / / CREATE PROCEDURE UpdatePerson(
+DELIMETER / / CREATE PROCEDURE UpdatePerson(
     IN id int,
     IN firstname varchar(60),
     IN infix varchar(30),
@@ -30,7 +30,7 @@ DELEMETER / / CREATE PROCEDURE UpdatePerson(
 DECLARE EXIT HANDLER FOR 1062 BEGIN ROLLBACK;
 SELECT 0 AS id;
 END;
-DELEMETER;
+DELIMETER;
 START TRANSACTION;
 UPDATE Person
 SET firstname = firstname,
@@ -44,11 +44,11 @@ END;
 -- Name: DeletePerson
 -- Input: id
 -- Output: id
-DELEMETER / / CREATE PROCEDURE DeletePerson(IN id int) BEGIN -- Rollback if person not exists
+DELIMETER / / CREATE PROCEDURE DeletePerson(IN id int) BEGIN -- Rollback if person not exists
 DECLARE EXIT HANDLER FOR 1062 BEGIN ROLLBACK;
 SELECT 0 AS id;
 END;
-DELEMETER;
+DELIMETER;
 START TRANSACTION;
 DELETE FROM Person
 WHERE id = id;
