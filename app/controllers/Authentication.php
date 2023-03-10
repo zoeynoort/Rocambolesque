@@ -106,15 +106,13 @@
             try {
                 $this->model->createUser($data);
             } 
-                catch($e) 
+                catch(Exception $e) 
             {
                 $this->view("auth/msg?e=r_fail");
             }
 
             // Return to page
             $this->view("auth/msg?e=r_success");
-
-
         }
     }
 ?>
