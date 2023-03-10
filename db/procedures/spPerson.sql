@@ -11,9 +11,9 @@ DELIMITER //
 
 CREATE PROCEDURE spAddPerson
 ( -- Dit zijn alle argumenten die je meegeeft met het aanroepen van de procedure
-  p_firstname varchar(60), 
+  p_firstName varchar(60), 
   p_infix varchar(30),
-  p_lastname varchar(50),
+  p_lastName varchar(50),
   p_dateOfBirth date
 ) 
 BEGIN
@@ -24,7 +24,7 @@ BEGIN
     END;
     
     START TRANSACTION;
-        INSERT INTO Person (firstname, infix, lastname, dateOfBirth, createdAt, updatedAt) VALUES (p_firstname, p_infix, p_lastname, p_dateOfBirth, SYSDATE(6), SYSDATE(6));
+        INSERT INTO Person (firstname, infix, lastname, dateOfBirth, createdAt, updatedAt) VALUES (p_firstName, p_infix, p_lastName, p_dateOfBirth, SYSDATE(6), SYSDATE(6));
     COMMIT;
 END //
 DELIMITER ;
