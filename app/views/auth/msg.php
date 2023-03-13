@@ -3,10 +3,7 @@
         This piece of code is for translating codes to messages for
     */
 
-    $code = $_GET["e"];
-
-    // Default message
-    $message = "Onbekend bericht";
+    $code = $data;
 
     // List of messages
     $messages = [
@@ -16,7 +13,7 @@
         "l_success" => "Het inloggen is gelukt!"
     ];
 
-    $message = $messages[$code];
-
-
+    // Decide which message to show based on the code
+    $message = (isset($code) && in_array($code, $messages, true)) ? "Onbekend" :  $messages[$code];
+    var_dump($message);
 ?>
