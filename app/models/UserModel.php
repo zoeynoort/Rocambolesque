@@ -27,6 +27,15 @@
             return $this->db->single();
         }
 
+        public function deleteUser($id)
+        {
+            $this->db->query("CALL spUserDelete(:id);");
+
+            $this->db->bind(":id", $id);
+            
+            $this->db->execute();
+        }
+
         public function createUser($data) 
         {
             $this->db->query("CALL spUserAdd(:firstname, :infix, :lastname, :dateOfBirth, :username, :password);");
