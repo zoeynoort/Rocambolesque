@@ -29,8 +29,15 @@
 
         public function createUser($data) 
         {
-            $this->db->query("CALL ");
+            $this->db->query("CALL spUserAdd(:firstname, :infix, :lastname, :dateOfBirth, :username, :password);");
 
-            $this->db->bind("");
+            $this->db->bind(":firstname", $data["firstname"]);
+            $this->db->bind(":infix", $data["infix"]);
+            $this->db->bind(":lastname", $data["lastname"]);
+            $this->db->bind(":dateOfBirth", $data["dateOfBirth"]);
+            $this->db->bind(":username", $data["username"]);
+            $this->db->bind(":password", $data["password"]);
+
+            $this->db->execute();
         }
     }
