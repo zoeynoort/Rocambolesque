@@ -104,7 +104,7 @@
                 // Hash password
                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-                // Create data object with all thhe parameters
+                // Create data object with all the parameters
                 $data = [
                     "firstname" => $firstname,
                     "infix" => $infix,
