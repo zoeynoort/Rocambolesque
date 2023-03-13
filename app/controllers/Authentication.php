@@ -13,7 +13,7 @@
         }
         
         public function test() {
-            echo "hello testing";
+            $this->view("auth/msg", "l_success");
         }
 
         /*
@@ -33,19 +33,20 @@
                 $password = $_POST["password"];
 
                 // Validations
-                if(!isset($username)) return $this->view("auth/msg?e=l_username");
-                if(!isset($password)) return $this->view("auth/msg?e=l_password");
+                if(!isset($username)) return $this->view("auth/msg", "l_username");
+                if(!isset($password)) return $this->view("auth/msg", "l_password");
                 
                 // Get user
                 $user = $this->model->getUserByUsername($username);
 
-                // TODO: Authenticate
+                // Verify the hash with the given password, if it fails, show a message
+                if(!password_verify($password, $user->password)) return $this->view("auth/msg", "l_fail");
 
                 // Set data in the session, we set the id so we can always find the user through our application.
                 $_SESSION["user"] = 0;
 
                 // Return to page
-                return $this->view("auth/msg?e=l_success");
+                return $this->view("auth/msg", "l_success");
             } 
                 else
             {
@@ -92,12 +93,12 @@
                 $password = $_POST["password"];
 
                 // Validations
-                if(!isset($firstname)) return $this->view("auth/msg?e=r_firstname");
-                // if(!isset($infix)) return $this->view("auth/msg?e=r_infx");
-                if(!isset($lastname)) return $this->view("auth/msg?e=r_lastname");
-                if(!isset($dateOfBirth)) return $this->view("auth/msg?e=r_dateofbirth");
-                if(!isset($username)) return $this->view("auth/msg?e=r_username");
-                if(!isset($password)) return $this->view("auth/msg?e=r_password");
+                if(!isset($firstname)) return $this->view("auth/msg", "r_firstname");
+                // if(!isset($infix)) return $this->view("auth/msg", "r_infix");
+                if(!isset($lastname)) return $this->view("auth/msg", "r_lastname");
+                if(!isset($dateOfBirth)) return $this->view("auth/msg", "r_dateofbirth");
+                if(!isset($username)) return $this->view("auth/msg", "r_username");
+                if(!isset($password)) return $this->view("auth/msg", "r_password");
                 // TODO: more validations for specific fields
 
                 // Hash password
@@ -119,11 +120,11 @@
                 } 
                     catch(Exception $e) 
                 {
-                    $this->view("auth/msg?e=r_fail");
+                    $this->view("auth/msg", "r_fail");
                 }
 
                 // Return to page
-                return $this->view("auth/msg?e=r_success");
+                return $this->view("auth/msg", "r_success");
             }
                 else
             {
