@@ -1,18 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocambolesque</title>
-</head>
-<body>
-    <!-- Header-->
-    <?php $this->view("partials/header"); ?>
+    <?php 
+        $title = "Home";
+        require_once "partials/header.php";
+    ?>
 
-    <!-- Body -->
+    <img src="..." class="img-fluid" alt="...">
 
-    <!-- Footer -->
-    <?php $this->view("partials/footer"); ?>
-</body>
-</html>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4 text-center">
+                <img src="" alt="">
+            </div>
+            <div class="col-4 text-center">
+                FAST
+                You've never made a website this fast before.
+                <button type="button" class="btn btn-primary">Read More</button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4 text-center">
+                <img src="" alt="">
+            </div>
+            <div class="col-4 text-center">
+                EASY
+                Works like the canvas tools you're familiar with.
+                <button type="button" class="btn btn-primary">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <?php require_once "partials/footer.php"; ?>
