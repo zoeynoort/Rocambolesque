@@ -1,4 +1,7 @@
 <?php
+    // Hashing options
+    $hashing_options = array("cost" => 11);
+
     // Start sessions
     session_start();
 
@@ -102,7 +105,7 @@
                 // TODO: more validations for specific fields
 
                 // Hash password
-                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT, $hashing_options);
 
                 // Create data object with all the parameters
                 $data = [
