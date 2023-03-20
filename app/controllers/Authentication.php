@@ -12,7 +12,7 @@
 
         public function __construct()
         {
-            $model = $this->model("UserModel");
+            $this->model = $this->model("UserModel");
         }
         
         public function test() {
@@ -29,15 +29,15 @@
             if($_SERVER["REQUEST_METHOD"] == "POST")
             {
                 // Sanitize request
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+                // $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_POST);
+
+                // Validations
+                if(!isset($_POST["username"])) return $this->view("auth/msg", "l_username");
+                if(!isset($_POST["password"])) return $this->view("auth/msg", "l_password");
 
                 // Parameters
                 $username = $_POST["username"];
                 $password = $_POST["password"];
-
-                // Validations
-                if(!isset($username)) return $this->view("auth/msg", "l_username");
-                if(!isset($password)) return $this->view("auth/msg", "l_password");
                 
                 // Get user
                 $user = $this->model->getUserByUsername($username);
@@ -56,7 +56,6 @@
                 // Show page
                 return $this->view("auth/login");
             }
-            
         }
 
         /*
@@ -137,7 +136,6 @@
                 // Show page
                 return $this->view("auth/register");
             }
-            
         }
     }
 ?>
