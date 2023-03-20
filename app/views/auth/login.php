@@ -13,7 +13,7 @@
     <!-- Body -->
     <div class="frame">
         <h1>log in</h1>
-        <a href="<?php URLROOT; ?>/signup">no account?</a>
+        <a href="<?php URLROOT; ?>/authentication/register">no account?</a>
 
         <form action="<?= URLROOT; ?>/countries/update" method="post">
             <input type="text" name="Email" value="" placeholder="Email">
