@@ -46,7 +46,7 @@
                 if(!password_verify($password, $user->password)) return $this->view("auth/msg", "l_fail");
 
                 // Set data in the session, we set the id so we can always find the user through our application.
-                $_SESSION["user"] = 0;
+                $_SESSION["user"] = $user->id;
 
                 // Return to page
                 return $this->view("auth/msg", "l_success");
@@ -64,6 +64,9 @@
         */
         public function logout()
         {
+            // TODO: Get user and set logout date
+            $user = $this->model->getUserById($_SESSION["user"]);
+
             // Remove everything from the session regarding authentication
             session_unset("user");
 
