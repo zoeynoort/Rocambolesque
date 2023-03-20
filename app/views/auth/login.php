@@ -15,7 +15,7 @@
         <h1>log in</h1>
         <a href="<?php URLROOT; ?>/authentication/register">no account?</a>
 
-        <form action="<?= URLROOT; ?>/countries/update" method="post">
+        <form action="<?= URLROOT; ?>/authentication/login" method="post">
             <input type="text" name="Email" value="" placeholder="Email">
 
             <input type="text" name="Password" value="" placeholder="Password">
@@ -24,7 +24,6 @@
         </form>
 
     </div>
-
 
     <!-- Footer -->
     <?php $this->view("partials/footer"); ?>
