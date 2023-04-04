@@ -1,48 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/site.css">
+    <title>Document</title>
+</head>
 
-    <link rel="stylesheet" href="/css/style.css">
+<body>
+    <div class="navbar">
+        <ul>
+            <li><img src="../public/Img/Rocambolesque-logo-DEF.png" alt="Rocambolesque-logo" id="nav-logo">
+            </li>
+            <li style="float:right"><a class="active" href="#sign-up">Sign up</a></li>
+            <li style="float:right"><a href="#contact">Contact</a></li>
+            <li style="float:right"><a href="#about">About</a></li>
+        </ul>
+    </div>
+</body>
 
-    <title>Rocambolesque - <?php echo $title ?></title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="" alt="" width="30" height="24">
-            </a>
-            <button
-            type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                class="navbar-toggler"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 position-relative top-0 start-100">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Signup</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container-fluid p-3 mb-2 bg-info text-dark">
-
+</html>
