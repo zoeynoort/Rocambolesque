@@ -14,7 +14,7 @@ require_once "partials/header.php";
 </head>
 
 <body>
-    <div class="hero">Rocambolesque</div>
+    <div class="hero"></div>
     <div class="content">
 
         <div class="row">
