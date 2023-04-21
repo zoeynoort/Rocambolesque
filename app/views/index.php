@@ -42,6 +42,7 @@ require_once "partials/header.php";
             </div>
         </div>
 
+        <!-- Body -->
 
     </div>
 </body>
