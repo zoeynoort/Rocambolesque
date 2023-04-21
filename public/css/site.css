@@ -1,3 +1,85 @@
+@font-face {
+    font-family: 'GoodBrush';
+    src: url('../fonts/GoodBrush.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoSlab';
+    src: url('../fonts/RobotoSlab.ttf');
+}
+
+:root {
+    --Teal: #04BF9D;
+    --Light-brown: #D99F6C;
+    --Mediumbrown: #A6633C;
+    --Dark-brown: #40261D;
+    --Light-grey: #F2F2F2;
+}
+
+body#login {
+    background: linear-gradient(to bottom, rgba(4, 191, 157, 0.5), rgba(166, 99, 60, 0.5)), url(../img/rocambg.png) no-repeat center center fixed;
+    background-size: cover;
+    font-family: RobotoSlab;
+}
+
+
+.frame {
+    position: relative;
+    top: 25%;
+    text-align: center;
+    background-color: var(--Light-grey);
+    height: 50%;
+    width: 50%;
+    margin: auto;
+}
+
+.frame h1 {
+    margin: 0%;
+    top: 10%;
+    font-family: GoodBrush;
+    position: relative;
+}
+
+.frame a {
+    top: 10%;
+    position: relative;
+}
+
+.frame form {
+    position: relative;
+    top: 15%;
+    width: 75%;
+    margin: auto;
+}
+
+.frame input {
+    text-align: center;
+    position: relative;
+    margin-top: 1%;
+    background-color: white;
+    height: 20%;
+    width: inherit;
+    border: 5px solid;
+}
+
+.frame input:active {
+    background-color: grey;
+}
+
+.frame input:focus {
+    background-color: red;
+}
+
+.frame .enterbtn {
+    background-color: var(--Mediumbrown);
+    height: 15%;
+    width: 40%;
+    color: var(--Light-grey);
+    font-family: GoodBrush;
+    font-size: 100%;
+    border: none;
+}
+
 #nav-logo {
     height: 42px;
 }
