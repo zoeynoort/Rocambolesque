@@ -195,7 +195,8 @@ H1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2%
+    margin-top: 2%;
+    flex-direction: column;
 }
 
 .flex {

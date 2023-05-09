@@ -9,9 +9,10 @@ class MenuModel
         $this->db = new Database();
     }
 
-    public function ReadMenu()
+    public function ReadMenu($id)
     {
-        $this->db->query("SELECT * FROM `person`");
+        $this->db->query("CALL `spReadMenu`(:id);");
+        $this->db->bind("id", $id);
 
         $result = $this->db->resultSet();
 

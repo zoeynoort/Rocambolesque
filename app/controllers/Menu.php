@@ -9,9 +9,9 @@ class Menu extends Controller
         $this->MenuModel = $this->Model('MenuModel');
     }
 
-    public function index()
+    public function index($id)
     {
-        $results = $this->MenuModel->ReadMenu();
+        $results = $this->MenuModel->ReadMenu($id);
         $data = [
             'results' => $results
         ];
