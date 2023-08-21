@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'GoodBrush';
+    src: url('../fonts/GoodBrush.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoSlab';
+    src: url('../fonts/RobotoSlab.ttf');
+}
+
+:root {
+    --Teal: #04BF9D;
+    --Light-brown: #D99F6C;
+    --Mediumbrown: #A6633C;
+    --Dark-brown: #40261D;
+    --Light-grey: #F2F2F2;
+}
+
+body#login {
+    background: linear-gradient(to bottom, rgba(4, 191, 157, 0.5), rgba(166, 99, 60, 0.5)), url(../img/rocambg.png) no-repeat center center fixed;
+    background-size: cover;
+    font-family: RobotoSlab;
+}
+
+
+.frame {
+    position: relative;
+    top: 25%;
+    text-align: center;
+    background-color: var(--Light-grey);
+    height: 50%;
+    width: 50%;
+    margin: auto;
+}
+
+.frame h1 {
+    margin: 0%;
+    top: 10%;
+    font-family: GoodBrush;
+    position: relative;
+}
+
+.frame a {
+    top: 10%;
+    position: relative;
+}
+
+.frame form {
+    position: relative;
+    top: 15%;
+    width: 75%;
+    margin: auto;
+}
+
+.frame input {
+    text-align: center;
+    position: relative;
+    margin-top: 1%;
+    background-color: white;
+    height: 20%;
+    width: inherit;
+    border: 5px solid;
+}
+
+.frame input:active {
+    background-color: grey;
+}
+
+.frame input:focus {
+    background-color: red;
+}
+
+.frame .enterbtn {
+    background-color: var(--Mediumbrown);
+    height: 15%;
+    width: 40%;
+    color: var(--Light-grey);
+    font-family: GoodBrush;
+    font-size: 100%;
+    border: none;
+}
+
+#nav-logo {
+    height: 42px;
+}
+
+.navbar {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #40261d;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #40261d;
+    color: white;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: inherit;
+    width: inherit;
+    margin: 0px;
+}
+
+.hero {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to bottom, rgba(166, 99, 60, 0.5), rgba(242, 242, 242, 0.5)), url(https://cdn.discordapp.com/attachments/1047424827910271007/1087357024213401660/image.png) no-repeat center center fixed;
+    background-position-y: center;
+    background-size: cover;
+}
+
+.content {
+    background-color: lightgrey;
+    height: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+.card {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card .image {
+    width: 50%;
+}
+
+.card .image img {
+    margin: auto;
+    width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.card .text {
+    width: 50%;
+    font-size: 1.4vw;
+}
+
+.header {
+    width: 100%;
+    height: 5%;
+}
+
+H1 {
+    color: #000000;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 0%;
+}
+
+.MenuItem div {
+    font-size: 250%;
+    font-weight: bold;
+}
+
+.MenuItem {
+    width: 600px;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+}
+
+body {
+    height: inherit;
+    width: inherit;
+    background-image: linear-gradient(to bottom, #ffffffa0, rgba(255, 255, 255, 0.598)), url("https://media.discordapp.net/attachments/1047424827910271007/1097508131698917476/tomatosauce.png?width=962&height=643");
+    background-size: cover;
+}
