@@ -1,4 +1,4 @@
-<body class="flex">
+<body class="flex menu-body">
     <!-- Header-->
     <?php $this->view("partials/header"); ?>
 
@@ -6,7 +6,6 @@
 
 
 
-    WELCOME TO THE COOL MENU
     <div class="header">
         <h1><?= $data['results'][0]->menuName ?></h1>
     </div>
